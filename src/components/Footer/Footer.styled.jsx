@@ -13,6 +13,5 @@ export const StyledLink = styled.a`
 
   &:hover {
     color: red;
-    text-shadow: 2px 2px 2px red;
   }
 `;
