@@ -4,6 +4,7 @@ import HomePage from 'pages/HomePage/HomePage';
 import LoginPage from 'pages/LoginPage/LoginPage';
 import SignUpPage from 'pages/SignUpPage/SignUpPage';
 import ContactsPage from 'pages/ContactsPage/ContactsPage';
+import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<SignUpPage />} />
           <Route path="contacts" element={<ContactsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </>
