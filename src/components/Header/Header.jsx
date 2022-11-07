@@ -1,6 +1,6 @@
 import { Box } from 'components/Box';
 import Logo from 'components/Logo/Logo';
-import AuthBlock from 'components/AuthBlock/AuthBlock';
+import Navigation from 'components/Navigation/Navigation';
 import UserMenu from 'components/UserMenu/UserMenu';
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
     >
       <Logo />
       <UserMenu />
-      <AuthBlock />
+      <Navigation />
     </Box>
   );
 }

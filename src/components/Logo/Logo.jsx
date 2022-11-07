@@ -9,7 +9,8 @@ export default function Logo() {
       <StyledIconBg>
         <GiRotaryPhone size="32px" />
       </StyledIconBg>
-      <StyledLogoText>PhoneBook</StyledLogoText>
+
+      <StyledLogoText to="/">PhoneBook</StyledLogoText>
     </Box>
   );
 }

@@ -5,6 +5,7 @@ import { StyledText, StyledLink } from './Footer.styled';
 export default function Footer() {
   return (
     <Box
+      mt="auto"
       py={3}
       as="footer"
       minHeight="50px"

@@ -7,7 +7,7 @@ import ContactForm from './ContactForm/ContactForm';
 import Contacts from './Contacts/Contacts';
 import Filter from './Filter/Filter';
 
-import { StyledMain, StyledContainer } from './PhoneBook.styled';
+import { StyledContainer } from './PhoneBook.styled';
 
 const PhoneBook = () => {
   return (
@@ -23,21 +23,20 @@ const PhoneBook = () => {
         draggable
         pauseOnHover
       />
-      <StyledMain>
-        <StyledContainer>
-          <PhoneBookSection title="Phonebook">
-            <ContactForm />
+
+      <StyledContainer>
+        <PhoneBookSection title="Phonebook">
+          <ContactForm />
+        </PhoneBookSection>
+        <>
+          <PhoneBookSection title="Search...">
+            <Filter />
           </PhoneBookSection>
-          <>
-            <PhoneBookSection title="Search...">
-              <Filter />
-            </PhoneBookSection>
-            <PhoneBookSection title="Contacts">
-              <Contacts />
-            </PhoneBookSection>
-          </>
-        </StyledContainer>
-      </StyledMain>
+          <PhoneBookSection title="Contacts">
+            <Contacts />
+          </PhoneBookSection>
+        </>
+      </StyledContainer>
     </>
   );
 };
