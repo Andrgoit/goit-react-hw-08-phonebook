@@ -2,8 +2,12 @@ import { Box } from 'components/Box';
 import Logo from 'components/Logo/Logo';
 import Navigation from 'components/Navigation/Navigation';
 import UserMenu from 'components/UserMenu/UserMenu';
+//redux
+import { useSelector } from 'react-redux';
+import { isLogin } from 'redux/auth/auth-selectors';
 
 export default function Header() {
+  const isUserLogined = useSelector(isLogin);
   return (
     <Box
       padding={3}
@@ -17,8 +21,7 @@ export default function Header() {
       background="#1d528d"
     >
       <Logo />
-      <UserMenu />
-      <Navigation />
+      {isUserLogined ? <UserMenu /> : <Navigation />}
     </Box>
   );
 }

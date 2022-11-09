@@ -28,11 +28,11 @@ export default function Contacts() {
 
   return (
     <StyledList>
-      {filteredContacts.map(({ name, phone, id }) => {
+      {filteredContacts.map(({ name, number, id }) => {
         return (
           <StyledItem key={id}>
             <FaRegUser />
-            {name} : {phone}
+            {name} : {number}
             <StyledIconSpan onClick={() => dispatch(deleteContact(id))}>
               <FaRegTrashAlt />
             </StyledIconSpan>

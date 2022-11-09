@@ -10,14 +10,14 @@ import {
   StyledButton,
 } from './LoginForm.styled';
 
-export default function LoginForm() {
+export default function LoginForm({ onSubmit }) {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(null);
+  const [password, setPassword] = useState('');
   const [isShowPass, setIsShowPass] = useState(false);
 
   const handlerSubmitForm = e => {
     e.preventDefault();
-    console.log('email', email, 'pass', password);
+    onSubmit({ email, password });
   };
 
   const toggleShowPass = () => {

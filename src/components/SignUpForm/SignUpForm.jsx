@@ -1,7 +1,7 @@
 import { Box } from 'components/Box';
 import { useState } from 'react';
-import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 
+import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import {
   StyledFormContainer,
   StyledForm,
@@ -10,15 +10,16 @@ import {
   StyledButton,
 } from './SignUpForm.styled';
 
-export default function SignUpForm() {
+export default function SignUpForm({ onSubmit }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(null);
+  const [password, setPassword] = useState('');
   const [isShowPass, setIsShowPass] = useState(false);
 
   const handlerSubmitForm = e => {
     e.preventDefault();
-    console.log('email', email, 'pass', password);
+
+    onSubmit({ name, email, password });
   };
 
   const toggleShowPass = () => {
