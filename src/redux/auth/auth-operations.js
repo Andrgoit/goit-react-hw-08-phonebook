@@ -50,3 +50,27 @@ export const logout = createAsyncThunk(
     }
   }
 );
+
+export const current = createAsyncThunk(
+  'auth/current',
+  // из thunkAPI деструктуризируем rejectWithValue и getState
+  // rejectWithValue - обрабатывает ошибки
+  // getState - имеет доступ ко всему стейту
+  async (_, { rejectWithValue, getState }) => {
+    try {
+      // получаем раздейл auth из стейта
+      const { auth } = getState();
+      console.log(auth);
+      // делаем запрос userCurrent с токеном из auth
+      const result = await api.userCurrent(auth.token);
+      console.log(result);
+      return result;
+    } catch ({ response }) {
+      const error = {
+        status: response.status,
+        message: response.message,
+      };
+      rejectWithValue(error);
+    }
+  }
+);

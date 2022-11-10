@@ -8,6 +8,7 @@ export default function Navigation() {
       <StyledLink to={to}>{text}</StyledLink>
     </StyledItem>
   ));
+
   return (
     <Box>
       <StyledList>{elements}</StyledList>

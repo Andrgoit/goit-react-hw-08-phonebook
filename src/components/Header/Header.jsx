@@ -8,6 +8,7 @@ import { isLogin } from 'redux/auth/auth-selectors';
 
 export default function Header() {
   const isUserLogined = useSelector(isLogin);
+
   return (
     <Box
       padding={3}

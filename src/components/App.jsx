@@ -6,7 +6,17 @@ import SignUpPage from 'pages/SignUpPage/SignUpPage';
 import ContactsPage from 'pages/ContactsPage/ContactsPage';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { current } from 'redux/auth/auth-operations';
+
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(current());
+  }, [dispatch]);
+
   return (
     <>
       <Routes>
