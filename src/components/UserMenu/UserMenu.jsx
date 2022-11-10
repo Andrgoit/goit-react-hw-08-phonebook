@@ -1,8 +1,8 @@
 import { Box } from 'components/Box';
-import { StyledUserText, StyledBtn, StyledLink } from './UserMenu.styled';
+import { StyledBtn, StyledLink } from './UserMenu.styled';
 //redux
-import { useDispatch, useSelector } from 'react-redux';
-import { userName, userEmail } from 'redux/auth/auth-selectors';
+import { useDispatch } from 'react-redux';
+// import { userName, userEmail } from 'redux/auth/auth-selectors';
 import { logout } from 'redux/auth/auth-operations';
 
 export default function UserMenu() {
