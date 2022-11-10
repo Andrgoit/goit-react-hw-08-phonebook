@@ -3,6 +3,4 @@ export const isLogin = state => {
   return state.auth.isLogin;
 };
 
-export const userName = state => state.auth.user.name;
-
-export const userEmail = state => state.auth.user.email;
+export const getUser = state => state.auth.user;

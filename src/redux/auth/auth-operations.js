@@ -57,12 +57,17 @@ export const current = createAsyncThunk(
   // rejectWithValue - обрабатывает ошибки
   // getState - имеет доступ ко всему стейту
   async (_, { rejectWithValue, getState }) => {
+    // получаем раздейл auth из стейта
+    const { auth } = getState();
+    const persistedToken = auth.token;
+
+    //если токена нет, то и запроса не будет
+    if (!persistedToken) {
+      return rejectWithValue();
+    }
     try {
-      // получаем раздейл auth из стейта
-      const { auth } = getState();
-      console.log(auth);
       // делаем запрос userCurrent с токеном из auth
-      const result = await api.userCurrent(auth.token);
+      const result = await api.userCurrent(persistedToken);
       console.log(result);
       return result;
     } catch ({ response }) {
