@@ -15,3 +15,9 @@ export const login = async loginData => {
   instance.defaults.headers.common.authorization = `Bearer ${data.token}`;
   return data;
 };
+
+export const logout = async () => {
+  const { data } = await instance.post('/users/logout');
+  instance.defaults.headers.common.authorization = `Bearer ${data.token}`;
+  return data;
+};
